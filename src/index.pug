@@ -4,13 +4,17 @@ html(lang="en")
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 		link(rel='icon' href='files/favicon.png')
-		title Testing
+		title Portfolio
 		link(rel="stylesheet" href="css/style.min.css")
 	body
 		.page
 			include pug/header/header
 			include pug/main/main
 			include pug/footer/footer
+
+			.bg 
+				img(src="./img/bg.jpg" alt="")
 			
 			.author
 				img(src="./img/me.png" alt="")
+		script(src="./js/app.js")
