@@ -1,0 +1,102 @@
+@import './mixins.scss';
+
+html {
+    font-size: 15px;
+}
+
+body {
+    margin: 0;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1030px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.page {
+    width: 100%;
+    height: 100vh;
+    min-height: 770px;
+
+    background: #000 url(../img/bg.jpg) center no-repeat;
+    background-size: cover;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.btn {
+    display: inline-block;
+    padding: 11px 35px;
+
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.2;
+    color:#fff;
+    font-weight: 500;
+    text-decoration: none;
+
+	cursor: pointer;
+	border: none;
+	background-color:#2B7DED;
+	border-radius: 5px;
+
+	transition: background .2s linear;
+
+	&:hover {
+		background-color:#39cdff;
+	}
+
+	&--full {
+		display: block;
+		width: 100%;
+	}
+}
+
+.author {
+    position: absolute;
+    bottom:0;
+    right:20px;
+
+    img {
+        display: block;
+    }
+}
+
+@include maxW(1025) {
+    .author {
+        right: -250px;
+    }
+}
+
+@include maxW(768) {
+    .page {
+        min-height: 100vh;
+        height: auto;
+        padding-bottom: 2rem;
+    }
+
+    .author {
+        display: none;
+    }
+}

@@ -1,0 +1,70 @@
+@import '../../scss/mixins.scss';
+
+.footer {
+	width: 100%;
+	position: absolute;
+	bottom: 45px;
+	left:0;
+	
+	&__contacts {
+		display: flex;
+		align-items:center;
+	}
+
+	&__link {
+		margin-right: 2rem;
+		font-size: 1rem;
+		color: #fff;
+		text-decoration: none;
+		font-weight: 500;
+
+		&:last-child {
+			margin-right: 0;
+			position: relative;
+
+			&:after {
+				content:"";
+				display: block;
+				width: 80px;
+				height: 2px;
+				margin-left: 2rem;
+			
+				background-color:#fff;
+				pointer-events: none;
+			
+				position: absolute;
+				left: 100%;
+				top: 11px;
+			}
+		}
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__icon {
+		margin-right: 5px;
+	}
+
+	@include maxW(768) {
+		position: static;
+
+	
+		&__contacts {
+			flex-direction: column;
+		}
+	
+		&__link {
+			margin-right: 0;
+			margin-bottom: .5rem;
+
+			&:last-child {
+				margin-bottom: 0;
+
+				&::after {
+					display: none;
+				}
+			}
+		}
+	}
+}
